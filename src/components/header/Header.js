@@ -1,12 +1,12 @@
 import React from 'react';
 import Navigation from './Navigation';
+
 const Header = () => {
     return (
-        <div className="App">
+        <div>
             <Navigation />
-
         </div>
-
     );
 }
+
 export default Header;

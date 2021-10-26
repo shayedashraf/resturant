@@ -3,21 +3,14 @@ import { Navbar, NavbarBrand } from 'reactstrap';
 
 const Navigation = () => {
     return (
-
-
-        <Navbar dark color="dark">
-
-            <div className="container">
-                <NavbarBrand href="/">Shayed Resturant</NavbarBrand>
-            </div>
-
-
-
-        </Navbar>
-
-
-
-
+        <div>
+            <Navbar dark color="dark">
+                <div className="container">
+                    <NavbarBrand href="/">Bohubrihi Restaurant</NavbarBrand>
+                </div>
+            </Navbar>
+        </div>
     );
 }
+
 export default Navigation;
