@@ -8,7 +8,7 @@ const Navigation = () => {
         <Navbar dark color="dark">
 
             <div className="container">
-                <NavbarBrand href="/">Resturant</NavbarBrand>
+                <NavbarBrand href="/">Shayed Resturant</NavbarBrand>
             </div>
 
 
