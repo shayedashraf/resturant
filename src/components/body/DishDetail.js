@@ -6,15 +6,17 @@ const DishDetail = props => {
     return (
         <div>
             <Card style={{ marginTop: "10px" }}>
-                <CardImg top src={props.dish.image} alt={props.dish.name} />
+                <CardImg top src={props.dish.images} alt={props.dish.name} />
                 <CardBody style={{ textAlign: "left" }}>
                     <CardTitle>{props.dish.name}</CardTitle>
                     <CardText>
-                        <p>{props.dish.description}</p>
-                        <p>Price: {props.dish.price}/-</p>
+                        {props.dish.description}
+                    </CardText>
+                    <CardText>
+                        Price: {props.dish.price}/-
                     </CardText>
                     <hr />
-                    <LoadComments comments={props.dish.comments} />
+                    <LoadComments comments={props.dish.comments}></LoadComments>
                 </CardBody>
             </Card>
         </div>
