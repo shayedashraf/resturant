@@ -15,5 +15,4 @@ const Body = () => {
         </Routes>
     );
 }
-
 export default Body;

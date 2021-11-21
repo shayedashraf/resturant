@@ -6,7 +6,7 @@ const DishDetail = props => {
     return (
         <div>
             <Card style={{ marginTop: "10px" }}>
-                <CardImg top src={props.dish.images} alt={props.dish.name} />
+                <CardImg top src={props.dish.image} alt={props.dish.name} />
                 <CardBody style={{ textAlign: "left" }}>
                     <CardTitle>{props.dish.name}</CardTitle>
                     <CardText>
