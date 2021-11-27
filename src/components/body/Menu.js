@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-
 import MenuItem from './MenuItem';
 import DishDetail from './DishDetail';
 import { CardColumns, Modal, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { connect } from 'react-redux';
-
 
 const mapStateToProps = state => {
     return {
@@ -33,6 +31,7 @@ class Menu extends Component {
     }
 
     render() {
+        document.title = "Menu";
         const menu = this.props.dishes.map(item => {
             return (
                 <MenuItem

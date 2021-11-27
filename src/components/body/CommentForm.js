@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, Input } from 'reactstrap';
-
+import { connect } from 'react-redux';
 
 class CommentForm extends Component {
     constructor(props) {
@@ -15,22 +15,35 @@ class CommentForm extends Component {
     }
 
     handleInputChange = event => {
-
         this.setState({
             [event.target.name]: event.target.value
         })
     }
+
     handleSubmit = event => {
-        console.log(this.state);
+        //console.log(this.state);
+        this.props.dispatch({
+            type: 'ADD_COMMENT',
+            payload: {
+                dishId: this.props.dishId,
+                author: this.state.author,
+                rating: this.state.rating,
+                comment: this.state.comment
+            }
+
+        });
+
         this.setState({
             author: '',
             rating: '',
             comment: ''
         });
+
         event.preventDefault();
     }
 
     render() {
+        //console.log(this.props);
         return (
             <div>
                 <Form onSubmit={this.handleSubmit}>
@@ -45,14 +58,13 @@ class CommentForm extends Component {
                     <Input
                         type="select"
                         name="rating"
-                        value={this.state.rating}>
-                        onChange = {this.handleInputChange}
+                        value={this.state.rating}
+                        onChange={this.handleInputChange} >
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
                         <option>5</option>
-
                     </Input>
                     <br />
                     <Input
@@ -67,10 +79,8 @@ class CommentForm extends Component {
                     <Button type="submit">Submit Comment</Button>
                 </Form>
             </div>
-
         );
     }
 }
 
-
-export default CommentForm;
+export default connect()(CommentForm);
